@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Menu bar prototype</title>
+    <link href="menu.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <script src="xw.js"></script>
+    <script src="menubar.js"></script>
+  </head>
+<body>
+
+  <div id="header">
+  
+  
+  </div>
+  
+  <script type="text/javascript">
+    var menu = new org.xwidgets.core.MenuBar();
+    
+    menu.children.push(new org.xwidgets.core.MenuItem("Project"));
+    var addons = new org.xwidgets.core.MenuItem("Addons");
+    
+    menu.children.push(addons);
+    
+    addons.children.push(new org.xwidgets.core.MenuItem("Scaffold"));
+    addons.children.push(new org.xwidgets.core.MenuItem("Database"));
+    
+    var forge = new org.xwidgets.core.MenuItem("Forge");
+    addons.children.push(forge);
+    
+    forge.children.push(new org.xwidgets.core.MenuItem("Install an Addon"));
+    forge.children.push(new org.xwidgets.core.MenuItem("Remove an Addon"));
+    forge.children.push(new org.xwidgets.core.MenuItem("Addon: Test New"));
+    forge.children.push(new org.xwidgets.core.MenuItem("addon-list"));
+    forge.children.push(new org.xwidgets.core.MenuItem("Addon: New Command"));
+    forge.children.push(new org.xwidgets.core.MenuItem("Addon: Test Setup"));
+    
+    menu.render(xw.Sys.getObject("header"));
+  </script>
+
+</body>
+</html>
